@@ -18,11 +18,11 @@ ACCOUNT = "config.json"
 COOKIES = "cookies.json"
 DEFAULT_MSG = "Xin chào, hiện giờ tôi không online. Nếu có việc gấp xin hãy gọi điện"
 
-USE_SIM = True
+USE_SIM = False
 SIM_API = "http://sandbox.api.simsimi.com/request.p?key=%s&lc=en&ft=1.0&text=%s"
 SIM_API_KEY = "6b4f06eb-4544-4381-be67-a911c376441d"
 
-USE_EVE = True
+USE_EVE = False
 EVE_API = "http://bot.evildragon.net/api.php?key=1&mode=chat&text=%s"
 ### SETTING END   ###
 
