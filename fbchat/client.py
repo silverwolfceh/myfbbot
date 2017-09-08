@@ -337,7 +337,7 @@ class Client(object):
             login_successful, login_url = self._login()
             if not login_successful:
                 log.warning('Attempt #{} failed{}'.format(i, {True:', retrying'}.get(i < max_tries, '')))
-                raw_input("Press any key to retry > ")
+                self.onWaitForAuthorize(attempt=i)
                 continue
             else:
                 self.onLoggedIn(email=email)
@@ -1488,6 +1488,13 @@ class Client(object):
     def on2FACode(self):
         """Called when a 2FA code is needed to progress"""
         input('Please enter your 2FA code --> ')
+
+    def onWaitForAuthorize(self, attempt = 1):
+        """
+        Called when the client need manual confirmation from user
+        :param attempt: Number of attempt has been made
+        """
+        log.info("Login failed #{}").format(attempt)
 
     def onLoggedIn(self, email=None):
         """
